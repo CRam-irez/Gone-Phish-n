@@ -1,5 +1,6 @@
 import numpy as np
-from collections import Counter 
+from collections import Counter
+from .preprocess_email import preprocess
 
 class MultinomialNB:
     def __init__(self, preprocess_func):
@@ -19,13 +20,13 @@ class MultinomialNB:
         self.p_ham = len(ham_mails) / len(data)
         
         for text in spam_mails['body']:
-            words = self.preprocess(text)
+            words = preprocess(text)
             self.spam_word_counts.update(words)
             self.vocab.update(words)
             self.spam_total_words += len(words)
             
         for text in ham_mails['body']:
-            words = self.preprocess(text)
+            words = preprocess(text)
             self.ham_word_counts.update(words)
             self.vocab.update(words)
             self.ham_total_words += len(words)
