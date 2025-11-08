@@ -32,7 +32,7 @@ class MultinomialNB:
             self.ham_total_words += len(words)
             
     def predict_proba(self, text):
-        words = self.preprocess(text)
+        words = preprocess(text)
         vocab_size = len(self.vocab)
         log_spam = np.log(self.p_spam)
         log_ham = np.log(self.p_ham)
