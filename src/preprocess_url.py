@@ -1,5 +1,5 @@
-from urllib.parse import urlparse
 import re
+
 def preprocess_url(url):
     
     url = url.lower()
