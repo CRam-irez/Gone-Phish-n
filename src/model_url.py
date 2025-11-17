@@ -60,3 +60,17 @@ class HybridURLClassifier:
             
             prob_spam /= (prob_spam + prob_ham)
             return prob_spam
+        
+        # Train Numeric Model
+        def fit_numeric_model(self, X_numeric, labels):
+            self.numeric_model.fit(X_numeric, labels)
+            
+        # Hybrid Prediction 
+        def predict_proba(self, url, numeric_features):
+            prob_text = self.predict_text_proba(url)
+            prob_numeric = self.numeric_model.predict_proba([numeric_features])[0][1]
+            
+            return (prob_text + prob_numeric) / 2
+        
+        def predict(self, url, numeric_features):
+            return self.predict_proba(url, numeric_features) > 0.5
