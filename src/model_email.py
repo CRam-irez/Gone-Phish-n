@@ -1,6 +1,7 @@
 import numpy as np
 from collections import Counter
-from .preprocess_email import preprocess
+import joblib
+from preprocess_email import preprocess
 
 class MultinomialNB:
     def __init__(self, preprocess_func):
@@ -49,3 +50,13 @@ class MultinomialNB:
     
     def predict(self, text):
         return self.predict_proba(text) > 0.5
+    
+    def save(self, path):
+        joblib.dump(self, path)
+        print(f"Email model saved to {path}")
+        
+    @staticmethod
+    def load(path):
+        model = joblib.load(path)
+        print(f"Email loaded from {path}")
+        return model
