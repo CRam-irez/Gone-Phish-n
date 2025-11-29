@@ -1,7 +1,7 @@
 import numpy as np
 from collections import Counter
 import joblib
-from preprocess_email import preprocess
+from src.preprocess_email import preprocess
 
 class MultinomialNB:
     def __init__(self, preprocess_func):
