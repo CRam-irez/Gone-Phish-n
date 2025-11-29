@@ -1,12 +1,12 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from src.preprocess_email import preprocess
-from src.model_email import MultinomialNB
+from preprocess_email import preprocess
+from model_email import MultinomialNB
 
 def load_data():
-    pd_CEAS_08 = pd.read_csv('data/CEAS_08.csv')
-    pd_Enron = pd.read_csv('data/Enron.csv')
-    pd_SpamAssasin = pd.read_csv('data/SpamAssasin.csv')
+    pd_CEAS_08 = pd.read_csv('../data/CEAS_08.csv')
+    pd_Enron = pd.read_csv('../data/Enron.csv')
+    pd_SpamAssasin = pd.read_csv('../data/SpamAssasin.csv')
     
     for df in [pd_CEAS_08, pd_Enron, pd_SpamAssasin]:
         df.drop(columns=['sender', 'receiver', 'date', 'urls', 'subject',], inplace=True, errors='ignore')
@@ -23,3 +23,13 @@ def train_model():
     model = MultinomialNB(preprocess_func=preprocess)
     model.fit(train_data)
     return model, test_data
+
+if __name__ == "__main__":
+    print("Training email spam detector...")
+    model, test_data = train_model()
+    
+    model.save("../email_spam_model.pkl")
+    
+    print("Quick Test")
+    print("Spam prob for 'win free money':", model.predict_proba("win free money click here"))
+    print("Spam prob for 'meeting tomorrow':", model.predict_proba("meeting tomorrow at 3pm"))
