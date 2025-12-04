@@ -1,0 +1,7 @@
+# Packages Required
+PyQt6==6.7.0
+pandas==2.2.2
+numpy==2.1.1
+scikit-learn==1.5.2
+nltk==3.9.1
+joblib==1.4.2
