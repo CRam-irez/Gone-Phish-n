@@ -20,7 +20,7 @@
       <x>10</x>
       <y>0</y>
       <width>1321</width>
-      <height>941</height>
+      <height>942</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,7 +32,7 @@
        <property name="maximumSize">
         <size>
          <width>300</width>
-         <height>250</height>
+         <height>200</height>
         </size>
        </property>
        <property name="layoutDirection">
@@ -126,12 +126,23 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_email">
-       <property name="text">
-        <string/>
+      <widget class="QTextEdit" name="lineEdit_email">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>180</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="acceptRichText">
+        <bool>false</bool>
        </property>
        <property name="placeholderText">
-        <string>https://example.com</string>
+        <string>Paste Email Contents Here</string>
        </property>
       </widget>
      </item>
@@ -147,19 +158,6 @@
         <string>Check Email</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
      <item>
       <widget class="QProgressBar" name="progressBar">
@@ -185,6 +183,12 @@
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QTextEdit" name="textEdit">
+       <property name="minimumSize">
+        <size>
+         <width>800</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -205,7 +209,7 @@
      <x>0</x>
      <y>0</y>
      <width>1355</width>
-     <height>24</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>
