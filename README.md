@@ -24,3 +24,5 @@ Design, train, and implement two independent naive Bayes models:
 - scikit-learn, pandas, numpy
 - NLTK for text processing 
 - Custom naive Baye implementation 
+
+## Requirements 
