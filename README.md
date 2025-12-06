@@ -1,7 +1,7 @@
 # Gone Phish'n - Phishing and Spam Detector Application
 
 The purpose of this project was to create and train a naive Bayes classifer to determine if an email is spam or not.
-Gone Phish'n is a desktop application that uses custom trained multinomial naive Bayes classifiers to detect malicious phishing URLS and spam emails in real time.
+Gone Phish'n is a desktop application that uses custom trained multinomial naive Bayes classifiers to detect malicious phishing URLS and spam emails in real time and output the spam percentage.
 
 ### Project Goal
 Design, train, and implement two independent naive Bayes models:
@@ -20,9 +20,15 @@ Design, train, and implement two independent naive Bayes models:
 - Email: Combined CEAS_08, Enron, and SpamAssassin corpora
 
 ### Built With 
-- Python + PyQt6
+- Python3 + PyQt6
 - scikit-learn, pandas, numpy
 - NLTK for text processing 
 - Custom naive Baye implementation 
 
-## Requirements 
+### Requirements 
+- Runs on macOS and LINUX, not currently working on Windows
+- All required packages are in requirements.txt file 
+
+### Installation + Running 
+I have created a bash file that bundles requirement downloads and running the application in one
+- 
