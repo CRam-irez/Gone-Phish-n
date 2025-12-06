@@ -14,3 +14,13 @@ Design, train, and implement two independent naive Bayes models:
 - Real time prediction 
 - Multiline email input with full text analysis 
 - Automatic model training and persistence using 'joblib'
+
+### Datasets Trained On
+- URL: Phishing and legit dataset consisting of 96,018 URLS - 48,009 spam and 48,009 legit. Built and used for evaluation in the paper "PhishStorm: Detecting Phishing with Streaming Analytics" published in IEEE TNSM
+- Email: Combined CEAS_08, Enron, and SpamAssassin corpora
+
+### Built With 
+- Python + PyQt6
+- scikit-learn, pandas, numpy
+- NLTK for text processing 
+- Custom naive Baye implementation 
