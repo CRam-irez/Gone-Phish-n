@@ -14,21 +14,21 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>1321</width>
-      <height>942</height>
-     </rect>
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <property name="leftMargin">
+     <number>200</number>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SizeConstraint::SetFixedSize</enum>
-     </property>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="label_logo">
+    <property name="rightMargin">
+     <number>200</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <widget class="QLabel" name="label_logo">
        <property name="maximumSize">
         <size>
          <width>300</width>
@@ -52,7 +52,7 @@
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLabel" name="label_title_url">
        <property name="font">
         <font>
@@ -169,7 +169,7 @@
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLabel" name="label_result">
        <property name="font">
         <font>
@@ -181,7 +181,7 @@
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <item>
       <widget class="QTextEdit" name="textEdit">
        <property name="minimumSize">
         <size>
@@ -202,7 +202,6 @@
      </item>
     </layout>
    </widget>
-  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
