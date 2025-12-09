@@ -22,10 +22,15 @@ def train_and_save():
     model = URLPhishingDetector()
     model.fit(urls_train.values, y_train.values)
     
+    # Training Accuracy
+    train_preds = [model.predict(url) for url in urls_train]
+    train_acc = accuracy_score(y_train, train_preds)
+    print(f"Training Accuracy: {sum(train_preds == y_train)}/{len(y_train)} ({train_acc:.1%})")
+    
     # Test Accuracy
-    preds = [model.predict(url) for url in urls_test]
-    acc = accuracy_score(y_test, preds)
-    print(f"Text-Only NB Model Accuracy: {acc:.1%}")
+    test_preds = [model.predict(url) for url in urls_test]
+    test_acc = accuracy_score(y_test, test_preds)
+    print(f"Test Accuracy: {sum(test_preds == y_test)}/{len(y_test)} ({test_acc:.1%})")
     
     # Save 
     model.save("phishing_model.pkl")

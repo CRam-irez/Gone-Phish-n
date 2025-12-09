@@ -22,14 +22,34 @@ def train_model():
     train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
     model = MultinomialNB(preprocess_func=preprocess)
     model.fit(train_data)
-    return model, test_data
+    return model, train_data, test_data
 
 if __name__ == "__main__":
     print("Training email spam detector...")
-    model, test_data = train_model()
+    model, train_data, test_data = train_model()
+    
+    # Calculate training accuracy
+    correct = 0
+    for idx, row in train_data.iterrows():
+        prediction = model.predict(row['body'])
+        if prediction == row['spam']:
+            correct += 1
+    
+    train_accuracy = (correct / len(train_data)) * 100
+    print(f"Training Accuracy: {correct}/{len(train_data)} ({train_accuracy:.1f}%)")
+    
+    # Calculate test accuracy
+    correct_test = 0
+    for idx, row in test_data.iterrows():
+        prediction = model.predict(row['body'])
+        if prediction == row['spam']:
+            correct_test += 1
+    
+    test_accuracy = (correct_test / len(test_data)) * 100
+    print(f"Test Accuracy: {correct_test}/{len(test_data)} ({test_accuracy:.1f}%)")
     
     model.save("email_spam_model.pkl")
     
-    print("Quick Test")
+    print("\nQuick Test")
     print("Spam prob for 'win free money':", model.predict_proba("win free money click here"))
     print("Spam prob for 'meeting tomorrow':", model.predict_proba("meeting tomorrow at 3pm"))
