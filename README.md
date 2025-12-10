@@ -26,9 +26,17 @@ Design, train, and implement two independent naive Bayes models:
 - Custom naive Baye implementation 
 
 ### Requirements 
-- Runs on macOS and LINUX, not currently working on Windows
+- Runs on macOS, LINUX, and Windows 
 - All required packages are in requirements.txt file 
 
 ### Installation + Running 
-I have created a bash file that bundles requirement downloads and running the application in one
-- 
+
+Created a bash file that bundles requirement downloads and running the application in one. 
+- First open the terminal and navigate to where the Gone Phish'n File is located
+- Once in the file run: 
+            chmod +x run_app.sh
+            ./run_app.sh
+- Installs all required Python packages listed in `requirements.txt`  
+- Automatically downloads necessary NLTK language data (`stopwords`, `punkt`, `punkt_tab`) required for email preprocessing  
+- Checks for existing trained models, if not found, automatically trains both the URL phishing and email spam classifiers using the provided datasets  
+- Launches the application 
