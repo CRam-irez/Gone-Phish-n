@@ -18,6 +18,16 @@ class URLPhishingDetector:
         self.p_spam = 0
         self.p_ham = 0
         
+        # Known legitimate domains to boost confidence
+        self.known_legitimate = {
+            'google', 'youtube', 'facebook', 'amazon', 'wikipedia', 'twitter',
+            'instagram', 'linkedin', 'reddit', 'netflix', 'microsoft', 'apple',
+            'github', 'stackoverflow', 'zoom', 'slack', 'spotify', 'twitch',
+            'discord', 'dropbox', 'adobe', 'salesforce', 'cloudflare', 'office',
+            'paypal', 'ebay', 'yahoo', 'bing', 'outlook', 'live', 'whatsapp',
+            'wikipedia', 'indeed', 'wordpress', 'github'
+        }
+        
     # Train Model
     def fit(self, urls, labels):
         spam_urls = [u for u, l in zip(urls, labels) if l == 1]
@@ -46,6 +56,13 @@ class URLPhishingDetector:
         tokens = preprocess_url(url)
         if not tokens:
             return 0.5
+        
+        # Check for known legitimate domains
+        # If URL is simple (<=3 tokens) and contains a known brand, give it strong legitimate score
+        if len(tokens) <= 3:
+            for token in tokens:
+                if token in self.known_legitimate:
+                    return 0.10  # Low phishing risk for known brands
         
         vocab_size = len(self.vocab) or 1
             
