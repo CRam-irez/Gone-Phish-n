@@ -32,13 +32,13 @@ Design, train, and implement two independent naive Bayes models:
 ### Installation + Running 
 
 Created a bash file that bundles requirement downloads and running the application in one. 
-- First open the terminal and navigate to where the Gone Phish'n File is located
+- First open the terminal and navigate to where the Gone Phish'n folder is located
 - Once in the file run: 
 
             chmod +x run_app.sh
 
             ./run_app.sh
-            
+
 - Installs all required Python packages listed in `requirements.txt`  
 - Automatically downloads necessary NLTK language data (`stopwords`, `punkt`, `punkt_tab`) required for email preprocessing  
 - Checks for existing trained models, if not found, automatically trains both the URL phishing and email spam classifiers using the provided datasets  
