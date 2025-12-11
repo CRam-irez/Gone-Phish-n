@@ -26,14 +26,22 @@ Design, train, and implement two independent naive Bayes models:
 - Custom naive Baye implementation 
 
 ### Requirements 
-- Runs on macOS, LINUX, and Windows 
-- All required packages are in requirements.txt file 
+- Runs on Windows and MacOS
+- All required packages to run on MacOS are in requirements.txt file 
 
-### Installation + Running 
+### Run on Windows
+
+Created an executable to run on Windows
+- Double click Gone-Phish-n.exe to run application 
+
+### Installation + Running on MacOS
 
 Created a bash file that bundles requirement downloads and running the application in one. 
+
+FOR MAC YOU MUST HAVE PIP INSTALLED ON YOUR SYSTEM TO RUN
+
 - First open the terminal and navigate to where the Gone Phish'n folder is located
-- Once in the file run: 
+- Once in the folder run: 
 
             chmod +x run_app.sh
 
