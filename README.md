@@ -51,3 +51,11 @@ FOR MAC YOU MUST HAVE PIP INSTALLED ON YOUR SYSTEM TO RUN
 - Automatically downloads necessary NLTK language data (`stopwords`, `punkt`, `punkt_tab`) required for email preprocessing  
 - Checks for existing trained models, if not found, automatically trains both the URL phishing and email spam classifiers using the provided datasets  
 - Launches the application
+
+### How to use
+
+This application has two main areas:
+- Area to type or paste a URL 
+- Area to type or paste Email body
+
+It can only run one check at a time, so you can only test for URL or Email individually. Once you have input into URL or Email simply hit the Check URL or Check Email and your results will appear below giving you malicious percentage 
